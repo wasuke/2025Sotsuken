@@ -10,9 +10,45 @@ window.addEventListener('keydown', (e) => {
     keys[e.code] = true;
 });
 
+
 window.addEventListener('keyup', (e) => {
     keys[e.code] = false;
 });
+
+// Mobile Controls Setup
+function setupMobileControls() {
+    const btnMap = {
+        'btnUp': 'ArrowUp',
+        'btnDown': 'ArrowDown',
+        'btnLeft': 'ArrowLeft',
+        'btnRight': 'ArrowRight',
+        'btnShoot': 'Space'
+    };
+
+    Object.keys(btnMap).forEach(id => {
+        const btn = document.getElementById(id);
+        const code = btnMap[id];
+
+        if (btn) {
+            const press = (e) => {
+                e.preventDefault();
+                keys[code] = true;
+            };
+            const release = (e) => {
+                e.preventDefault();
+                keys[code] = false;
+            };
+
+            btn.addEventListener('mousedown', press);
+            btn.addEventListener('mouseup', release);
+            btn.addEventListener('touchstart', press, { passive: false });
+            btn.addEventListener('touchend', release, { passive: false });
+            btn.addEventListener('mouseleave', release); // Handle drag out
+        }
+    });
+}
+setupMobileControls();
+
 
 class Player {
     constructor() {
