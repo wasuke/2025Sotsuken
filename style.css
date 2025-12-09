@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+canvas {
+    background-color: #000;
+    border: 2px solid #444;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    display: block;
+    /* Removes bottom space */
+    margin: 0 auto;
+}
+
+.instructions {
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 600px;
+}
+
+.instructions p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
